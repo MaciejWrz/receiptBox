@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 public class DefaultBase64Encoder implements Base64Encoder {
     @Override
     public String encode(Binary scannedReceipt) {
+        if (scannedReceipt == null) {
+            return null;
+        }
+
         return Base64.encodeBase64String(scannedReceipt.getData());
     }
 }

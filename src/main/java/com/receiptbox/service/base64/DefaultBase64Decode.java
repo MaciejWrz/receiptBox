@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 public class DefaultBase64Decode implements Base64Decode {
     @Override
     public byte[] decode(String scannedReceipt) {
-        var base64 = new Base64();
-        return base64.decode(scannedReceipt.trim().getBytes());
+        if (scannedReceipt == null || scannedReceipt.isBlank()) {
+            return null;
+        }
+
+        return new Base64().decode(scannedReceipt.trim().getBytes());
     }
 }
