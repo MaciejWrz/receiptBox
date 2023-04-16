@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  mongo:
+    image: mongo:6
+    ports:
+      - 27017:27017
+    volumes:
+      - type: bind
+        source: ./docker-initdb/mongo.yml
+        target: /etc/mongod.conf
+      - type: volume
+        source: mongo_volume
+        target: /data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: test
+      MONGO_INITDB_DATABASE: receiptBox
+    command: --config /etc/mongod.conf
+
+volumes:
+  mongo_volume:
