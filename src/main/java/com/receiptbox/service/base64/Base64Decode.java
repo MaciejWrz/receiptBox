@@ -1,7 +1,5 @@
 package com.receiptbox.service.base64;
 
-import org.bson.types.Binary;
-
-public interface Base64DecoderService {
+public interface Base64Decode {
     byte[] decode(String scannedReceipt);
 }
