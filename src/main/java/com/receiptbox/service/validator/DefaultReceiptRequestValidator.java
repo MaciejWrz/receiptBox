@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class DefaultReceiptRequestValidator implements ReceiptRequestValidator {
 
     public void validateId(String id) {
-        if (id == null || id.trim().isEmpty()) {
+        if (id == null || id.isBlank()) {
             throw new ReceiptValidationException("Id can't be empty!");
         }
     }
