@@ -4,7 +4,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DefaultBase64Decode implements Base64Decode {
+public class DefaultBase64Decoder implements Base64Decoder {
     @Override
     public byte[] decode(String scannedReceipt) {
         if (scannedReceipt == null || scannedReceipt.isBlank()) {

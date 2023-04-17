@@ -2,6 +2,7 @@ plugins {
     java
     id("org.springframework.boot") version "3.0.5"
     id("io.spring.dependency-management") version "1.1.0"
+    groovy
 }
 
 group = "com"
@@ -20,6 +21,7 @@ repositories {
 
 val spockVersion: String by project
 val commonsCodec: String by project
+val groovyVersion: String by project
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
@@ -29,7 +31,9 @@ dependencies {
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.apache.groovy:groovy-all:$groovyVersion")
     testImplementation("org.spockframework:spock-core:$spockVersion")
+    testImplementation("org.spockframework:spock-spring:$spockVersion")
 
 }
 

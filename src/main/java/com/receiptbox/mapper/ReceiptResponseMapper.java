@@ -26,8 +26,7 @@ public class ReceiptResponseMapper {
                 receipt.getProductShortName(),
                 receipt.getPurchaseDate(),
                 receipt.getPrice(),
-                (receipt.getScannedReceipt() != null
-                        ? base64Encoder.encode(receipt.getScannedReceipt()) : null)
+                base64Encoder.encode(receipt.getScannedReceipt())
         );
     }
 

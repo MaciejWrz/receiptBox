@@ -8,6 +8,7 @@ import com.receiptbox.exception.ReceiptNotFoundException;
 import com.receiptbox.repository.ReceiptRepository;
 import com.receiptbox.mapper.ReceiptMapper;
 import com.receiptbox.mapper.ReceiptResponseMapper;
+import com.receiptbox.service.validator.ReceiptRequestValidator;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +17,8 @@ import org.springframework.stereotype.Service;
 public class DefaultReceiptService implements ReceiptService {
     private ReceiptRepository receiptRepository;
     private ReceiptMapper receiptMapper;
-
     private ReceiptResponseMapper receiptResponseMapper;
+    private ReceiptRequestValidator receiptValidator;
 
     @Override
     public void createReceipt(CreateReceiptRequest createReceiptRequest) {
@@ -26,6 +27,7 @@ public class DefaultReceiptService implements ReceiptService {
 
     @Override
     public void updateReceipt(UpdateReceiptRequest updateReceiptRequest) {
+        receiptValidator.validateId(updateReceiptRequest.getId());
         var receipt = receiptRepository.findById(updateReceiptRequest.getId()).orElse(null);
 
         if (receipt != null) {
@@ -38,6 +40,7 @@ public class DefaultReceiptService implements ReceiptService {
 
     @Override
     public ReceiptResponse getReceipt(String id) {
+        receiptValidator.validateId(id);
         var receipt = receiptRepository.findById(id).orElse(null);
         return receiptResponseMapper.mapReceiptResponse(receipt);
     }
