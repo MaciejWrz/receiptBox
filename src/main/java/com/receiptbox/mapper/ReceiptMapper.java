@@ -1,15 +1,15 @@
 package com.receiptbox.mapper;
 
-import com.receiptbox.controller.request.CreateReceiptRequest;
-import com.receiptbox.controller.request.UpdateReceiptRequest;
+import com.receiptbox.dto.CreateReceiptRequest;
+import com.receiptbox.dto.UpdateReceiptRequest;
 import com.receiptbox.domain.Receipt;
 import com.receiptbox.service.base64.Base64Decoder;
 import lombok.AllArgsConstructor;
 import org.bson.types.Binary;
 import org.springframework.stereotype.Component;
 
-@AllArgsConstructor
 @Component
+@AllArgsConstructor
 public class ReceiptMapper {
     private Base64Decoder base64Decoder;
 

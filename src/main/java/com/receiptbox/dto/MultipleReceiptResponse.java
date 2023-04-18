@@ -1,4 +1,4 @@
-package com.receiptbox.controller.response;
+package com.receiptbox.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

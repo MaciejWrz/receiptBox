@@ -1,9 +1,9 @@
 package com.receiptbox.controller;
 
-import com.receiptbox.controller.request.CreateReceiptRequest;
-import com.receiptbox.controller.request.UpdateReceiptRequest;
-import com.receiptbox.controller.response.MultipleReceiptResponse;
-import com.receiptbox.controller.response.ReceiptResponse;
+import com.receiptbox.dto.CreateReceiptRequest;
+import com.receiptbox.dto.UpdateReceiptRequest;
+import com.receiptbox.dto.MultipleReceiptResponse;
+import com.receiptbox.dto.ReceiptResponse;
 import com.receiptbox.service.ReceiptService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class ReceiptController {
     private ReceiptService receiptService;
 
-    @GetMapping("/all")
+    @GetMapping("/")
     public MultipleReceiptResponse getAllReceipts() {
         return receiptService.getAllReceipts();
     }
@@ -24,7 +24,7 @@ public class ReceiptController {
         return receiptService.getReceipt(id);
     }
 
-    @PostMapping("/add")
+    @PostMapping("/")
     public void createReceipt(CreateReceiptRequest receiptRequest) {
         receiptService.createReceipt(receiptRequest);
     }

@@ -1,4 +1,4 @@
-package com.receiptbox.controller.request;
+package com.receiptbox.dto;
 
 import lombok.Data;
 import lombok.NonNull;

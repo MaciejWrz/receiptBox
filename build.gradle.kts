@@ -34,7 +34,6 @@ dependencies {
     testImplementation("org.apache.groovy:groovy-all:$groovyVersion")
     testImplementation("org.spockframework:spock-core:$spockVersion")
     testImplementation("org.spockframework:spock-spring:$spockVersion")
-
 }
 
 tasks.withType<Test> {

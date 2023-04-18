@@ -1,9 +1,9 @@
 package com.receiptbox.service;
 
-import com.receiptbox.controller.request.CreateReceiptRequest;
-import com.receiptbox.controller.request.UpdateReceiptRequest;
-import com.receiptbox.controller.response.MultipleReceiptResponse;
-import com.receiptbox.controller.response.ReceiptResponse;
+import com.receiptbox.dto.CreateReceiptRequest;
+import com.receiptbox.dto.UpdateReceiptRequest;
+import com.receiptbox.dto.MultipleReceiptResponse;
+import com.receiptbox.dto.ReceiptResponse;
 
 public interface ReceiptService {
     void createReceipt(CreateReceiptRequest createReceiptRequest);

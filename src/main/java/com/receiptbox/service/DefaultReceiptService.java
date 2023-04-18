@@ -1,9 +1,9 @@
 package com.receiptbox.service;
 
-import com.receiptbox.controller.request.CreateReceiptRequest;
-import com.receiptbox.controller.request.UpdateReceiptRequest;
-import com.receiptbox.controller.response.MultipleReceiptResponse;
-import com.receiptbox.controller.response.ReceiptResponse;
+import com.receiptbox.dto.CreateReceiptRequest;
+import com.receiptbox.dto.UpdateReceiptRequest;
+import com.receiptbox.dto.MultipleReceiptResponse;
+import com.receiptbox.dto.ReceiptResponse;
 import com.receiptbox.exception.ReceiptNotFoundException;
 import com.receiptbox.repository.ReceiptRepository;
 import com.receiptbox.mapper.ReceiptMapper;
@@ -12,8 +12,8 @@ import com.receiptbox.service.validator.ReceiptRequestValidator;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@AllArgsConstructor
 @Service
+@AllArgsConstructor
 public class DefaultReceiptService implements ReceiptService {
     private ReceiptRepository receiptRepository;
     private ReceiptMapper receiptMapper;

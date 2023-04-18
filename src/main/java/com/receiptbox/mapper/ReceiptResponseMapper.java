@@ -1,7 +1,7 @@
 package com.receiptbox.mapper;
 
-import com.receiptbox.controller.response.MultipleReceiptResponse;
-import com.receiptbox.controller.response.ReceiptResponse;
+import com.receiptbox.dto.MultipleReceiptResponse;
+import com.receiptbox.dto.ReceiptResponse;
 import com.receiptbox.domain.Receipt;
 import com.receiptbox.service.base64.Base64Encoder;
 import lombok.AllArgsConstructor;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@AllArgsConstructor
 @Component
+@AllArgsConstructor
 public class ReceiptResponseMapper {
     private Base64Encoder base64Encoder;
 
