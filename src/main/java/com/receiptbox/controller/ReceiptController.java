@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class ReceiptController {
     private ReceiptService receiptService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public MultipleReceiptResponse getAllReceipts() {
         return receiptService.getAllReceipts();
     }
@@ -24,7 +24,7 @@ public class ReceiptController {
         return receiptService.getReceipt(id);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public void createReceipt(CreateReceiptRequest receiptRequest) {
         receiptService.createReceipt(receiptRequest);
     }
