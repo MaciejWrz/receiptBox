@@ -22,11 +22,14 @@ repositories {
 val spockVersion: String by project
 val commonsCodec: String by project
 val groovyVersion: String by project
+val openApiVersion: String by project
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("commons-codec:commons-codec:$commonsCodec")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openApiVersion")
 
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
