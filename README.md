@@ -21,6 +21,7 @@ http://localhost:8080/swagger-ui/index.html
 ### Actuator
 By default, only basic endpoints are enabled. To enable other endpoints proper configuration needs to be added in application.properties file. </br>
 E.g. to enable all endpoints add `management.endpoints.web.exposure.include=*`
+Actuator endpoint: http://localhost:8080/actuator
 
 ## TODO
 There is still much to do:

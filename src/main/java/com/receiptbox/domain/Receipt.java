@@ -11,7 +11,6 @@ import java.time.OffsetDateTime;
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor()
-@NoArgsConstructor
 @Document
 public class Receipt {
     @Id
